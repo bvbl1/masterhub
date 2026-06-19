@@ -1,0 +1,42 @@
+{
+  "page": {
+    "loading": "Загрузка…",
+    "signInPrompt": "Войдите, чтобы пользоваться сообщениями.",
+    "signIn": "Войти",
+    "loadConversationsFailed": "Не удалось загрузить диалоги",
+    "sendFailed": "Не удалось отправить сообщение — сервер чата может быть недоступен. Проверьте порт 8081 или попробуйте позже.",
+    "sendPhotoFailed": "Не удалось загрузить или отправить фото.",
+    "updating": "Обновление…",
+    "reconnecting": "Переподключение к чату…",
+    "connecting": "Подключение к серверу чата…",
+    "loadingConversations": "Загрузка диалогов…",
+    "selectConversation": "Выберите диалог или откройте чат из профиля или заказа.",
+    "userFallback": "Пользователь #{{id}}",
+    "chatFallback": "Чат",
+    "photoMessage": "Фото"
+  },
+  "list": {
+    "title": "Сообщения",
+    "searchPlaceholder": "Поиск диалогов…",
+    "emptyTitle": "Пока нет диалогов",
+    "emptyDesc": "Начните переписку с исполнителем или заказчиком",
+    "noResults": "Ничего не найдено"
+  },
+  "window": {
+    "openProfile": "Открыть профиль {{name}}",
+    "viewProfile": "Смотреть профиль",
+    "online": "В сети",
+    "offline": "Не в сети",
+    "createOrder": "Создать заказ",
+    "viewOrder": "К заказу",
+    "orderLabel": "Заказ",
+    "viewDetails": "Подробнее",
+    "createOrderPrompt": "Готовы продолжить? Создайте заказ, когда договоритесь о деталях.",
+    "emptyTitle": "Начните переписку",
+    "emptyDesc": "Напишите {{name}}",
+    "openPhoto": "Открыть фото",
+    "attachPhoto": "Прикрепить фото",
+    "inputPlaceholder": "Введите сообщение…",
+    "inputWaiting": "Ожидание подключения…"
+  }
+}

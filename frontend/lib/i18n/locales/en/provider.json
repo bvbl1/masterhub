@@ -1,0 +1,52 @@
+{
+  "profile": {
+    "errorTitle": "Something went wrong",
+    "errorBody": "We couldn't load this provider profile. Please check your connection and try again.",
+    "tryAgain": "Try Again",
+    "noServicesTitle": "No services listed",
+    "noServicesDesc": "This provider hasn't added any services yet",
+    "stickyName": "Provider #{{id}}",
+    "messageProvider": "Message Provider",
+    "services": "Services",
+    "viewAllServices": "View All {{count}} Services"
+  },
+  "hero": {
+    "providerFallback": "Provider",
+    "removeFavorite": "Remove from favorites",
+    "addFavorite": "Add to favorites",
+    "favoriteUpdateFailed": "Could not update favorites. Try again.",
+    "reviewsCount": "({{count}} reviews)",
+    "noReviewsYet": "No reviews yet",
+    "servicesCount": "{{count}} services",
+    "servicesCount_one": "{{count}} service",
+    "messageProvider": "Message Provider",
+    "viewServices": "View Services"
+  },
+  "reviews": {
+    "title": "Reviews",
+    "noReviewsTitle": "No reviews yet",
+    "noReviewsDesc": "This provider hasn't received any reviews",
+    "reviewsCount": "{{count}} reviews",
+    "reviewsCount_one": "{{count}} review",
+    "oneStar": "{{count}} star",
+    "nStars": "{{count}} stars",
+    "reviewerLoading": "Loading reviewer…",
+    "reviewerUnavailable": "Reviewer profile unavailable",
+    "reviewerFallback": "Reviewer #{{id}}",
+    "reviewerAnonymous": "User"
+  },
+  "serviceCard": {
+    "startingAt": "Starting at",
+    "edit": "Edit",
+    "viewDetails": "View Details",
+    "delete": "Delete",
+    "deleting": "Deleting…",
+    "deleteConfirm": "Delete service \"{{title}}\"? This cannot be undone.",
+    "deleteFailed": "Could not delete the service. Please try again."
+  },
+  "trust": {
+    "responseRate": "Response Rate",
+    "completedJobs": "Completed Jobs",
+    "memberSince": "Member Since"
+  }
+}

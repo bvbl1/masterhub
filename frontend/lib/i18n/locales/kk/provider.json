@@ -1,0 +1,52 @@
+{
+  "profile": {
+    "errorTitle": "Бірдеңе дұрыс болмады",
+    "errorBody": "Орындаушы профилін жүктеу мүмкін болмады. Қосылымды тексеріп, қайта көріңіз.",
+    "tryAgain": "Қайталау",
+    "noServicesTitle": "Қызметтер жоқ",
+    "noServicesDesc": "Орындаушы әзірше қызмет қоспаған",
+    "stickyName": "Орындаушы #{{id}}",
+    "messageProvider": "Орындаушыға жазу",
+    "services": "Қызметтер",
+    "viewAllServices": "Барлық {{count}} қызмет"
+  },
+  "hero": {
+    "providerFallback": "Орындаушы",
+    "removeFavorite": "Таңдаулылардан алу",
+    "addFavorite": "Таңдаулыларға қосу",
+    "favoriteUpdateFailed": "Таңдаулыларды жаңарту мүмкін болмады. Қайта көріңіз.",
+    "reviewsCount": "({{count}} пікір)",
+    "noReviewsYet": "Әзірше пікірлер жоқ",
+    "servicesCount": "{{count}} қызмет",
+    "servicesCount_one": "{{count}} қызмет",
+    "messageProvider": "Орындаушыға жазу",
+    "viewServices": "Қызметтерді қарау"
+  },
+  "reviews": {
+    "title": "Пікірлер",
+    "noReviewsTitle": "Әзірше пікірлер жоқ",
+    "noReviewsDesc": "Бұл орындаушыда әзірше пікір жоқ",
+    "reviewsCount": "{{count}} пікір",
+    "reviewsCount_one": "{{count}} пікір",
+    "oneStar": "{{count}} жұлдыз",
+    "nStars": "{{count}} жұлдыз",
+    "reviewerLoading": "Автор жүктелуде…",
+    "reviewerUnavailable": "Автор профилі қолжетімсіз",
+    "reviewerFallback": "Автор #{{id}}",
+    "reviewerAnonymous": "Пайдаланушы"
+  },
+  "serviceCard": {
+    "startingAt": "Бастап",
+    "edit": "Өңдеу",
+    "viewDetails": "Толығырақ",
+    "delete": "Жою",
+    "deleting": "Жойылуда…",
+    "deleteConfirm": "«{{title}}» қызметін жою керек пе? Бұл әрекетті болдырмауға болмайды.",
+    "deleteFailed": "Қызметті жою мүмкін болмады. Қайта көріңіз."
+  },
+  "trust": {
+    "responseRate": "Жауап беру",
+    "completedJobs": "Орындалған тапсырыстар",
+    "memberSince": "Мүшелік жыл"
+  }
+}

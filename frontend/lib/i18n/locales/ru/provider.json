@@ -1,0 +1,52 @@
+{
+  "profile": {
+    "errorTitle": "Что-то пошло не так",
+    "errorBody": "Не удалось загрузить профиль исполнителя. Проверьте подключение и попробуйте снова.",
+    "tryAgain": "Повторить",
+    "noServicesTitle": "Нет услуг",
+    "noServicesDesc": "Исполнитель ещё не добавил услуги",
+    "stickyName": "Исполнитель #{{id}}",
+    "messageProvider": "Написать исполнителю",
+    "services": "Услуги",
+    "viewAllServices": "Все услуги ({{count}})"
+  },
+  "hero": {
+    "providerFallback": "Исполнитель",
+    "removeFavorite": "Убрать из избранного",
+    "addFavorite": "В избранное",
+    "favoriteUpdateFailed": "Не удалось обновить избранное. Попробуйте снова.",
+    "reviewsCount": "({{count}} отзывов)",
+    "noReviewsYet": "Пока нет отзывов",
+    "servicesCount": "{{count}} услуг",
+    "servicesCount_one": "{{count}} услуга",
+    "messageProvider": "Написать исполнителю",
+    "viewServices": "Смотреть услуги"
+  },
+  "reviews": {
+    "title": "Отзывы",
+    "noReviewsTitle": "Пока нет отзывов",
+    "noReviewsDesc": "У этого исполнителя ещё нет отзывов",
+    "reviewsCount": "{{count}} отзывов",
+    "reviewsCount_one": "{{count}} отзыв",
+    "oneStar": "{{count}} звезда",
+    "nStars": "{{count}} звёзд",
+    "reviewerLoading": "Загрузка автора…",
+    "reviewerUnavailable": "Профиль автора недоступен",
+    "reviewerFallback": "Автор #{{id}}",
+    "reviewerAnonymous": "Пользователь"
+  },
+  "serviceCard": {
+    "startingAt": "От",
+    "edit": "Изменить",
+    "viewDetails": "Подробнее",
+    "delete": "Удалить",
+    "deleting": "Удаление…",
+    "deleteConfirm": "Удалить услугу «{{title}}»? Это действие нельзя отменить.",
+    "deleteFailed": "Не удалось удалить услугу. Попробуйте ещё раз."
+  },
+  "trust": {
+    "responseRate": "Ответы",
+    "completedJobs": "Выполнено заказов",
+    "memberSince": "На платформе с"
+  }
+}

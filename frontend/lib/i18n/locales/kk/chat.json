@@ -1,0 +1,42 @@
+{
+  "page": {
+    "loading": "Жүктелуде…",
+    "signInPrompt": "Хабарламаларды пайдалану үшін жүйеге кіріңіз.",
+    "signIn": "Кіру",
+    "loadConversationsFailed": "Әңгімелерді жүктеу мүмкін болмады",
+    "sendFailed": "Хабарлама жіберілмеді — чат сервері қолжетімсіз болуы мүмкін. 8081 портын тексеріп, қайта көріңіз.",
+    "sendPhotoFailed": "Фотоны жүктеу немесе жіберу мүмкін болмады.",
+    "updating": "Жаңартылуда…",
+    "reconnecting": "Чатқа қайта қосылуда…",
+    "connecting": "Чат серверіне қосылуда…",
+    "loadingConversations": "Әңгімелер жүктелуде…",
+    "selectConversation": "Әңгімені таңдаңыз немесе профиль/тапсырыстан чатты ашыңыз.",
+    "userFallback": "Пайдаланушы #{{id}}",
+    "chatFallback": "Чат",
+    "photoMessage": "Фото"
+  },
+  "list": {
+    "title": "Хабарламалар",
+    "searchPlaceholder": "Әңгімелерді іздеу…",
+    "emptyTitle": "Әзірше әңгімелер жоқ",
+    "emptyDesc": "Орындаушы немесе тұтынушымен жазылыса бастаңыз",
+    "noResults": "Ештеңе табылмады"
+  },
+  "window": {
+    "openProfile": "{{name}} профилін ашу",
+    "viewProfile": "Профильді қарау",
+    "online": "Желіде",
+    "offline": "Желіде емес",
+    "createOrder": "Тапсырыс құру",
+    "viewOrder": "Тапсырысқа",
+    "orderLabel": "Тапсырыс",
+    "viewDetails": "Толығырақ",
+    "createOrderPrompt": "Дайынсыз ба? Мәліметтерге келісіп, тапсырыс құрыңыз.",
+    "emptyTitle": "Әңгімені бастаңыз",
+    "emptyDesc": "{{name}} жазыңыз",
+    "openPhoto": "Фотоны ашу",
+    "attachPhoto": "Фото қосу",
+    "inputPlaceholder": "Хабарлама жазыңыз…",
+    "inputWaiting": "Қосылу күтілуде…"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "page": {
+    "loading": "Loading…",
+    "signInPrompt": "Sign in to use messages.",
+    "signIn": "Sign in",
+    "loadConversationsFailed": "Failed to load conversations",
+    "sendFailed": "Couldn't send the message — chat server may be unreachable. Check port 8081 or try again in a moment.",
+    "sendPhotoFailed": "Could not upload or send the photo.",
+    "updating": "Updating…",
+    "reconnecting": "Reconnecting to chat…",
+    "connecting": "Connecting to chat server…",
+    "loadingConversations": "Loading conversations…",
+    "selectConversation": "Select a conversation or open a chat from a profile or order.",
+    "userFallback": "User #{{id}}",
+    "chatFallback": "Chat",
+    "photoMessage": "Photo"
+  },
+  "list": {
+    "title": "Messages",
+    "searchPlaceholder": "Search conversations…",
+    "emptyTitle": "No conversations yet",
+    "emptyDesc": "Start chatting with a provider or customer",
+    "noResults": "No results found"
+  },
+  "window": {
+    "openProfile": "Open {{name}} profile",
+    "viewProfile": "View profile",
+    "online": "Online",
+    "offline": "Offline",
+    "createOrder": "Create Order",
+    "viewOrder": "View Order",
+    "orderLabel": "Order",
+    "viewDetails": "View Details",
+    "createOrderPrompt": "Ready to proceed? Create an order when you've agreed on the details.",
+    "emptyTitle": "Start a conversation",
+    "emptyDesc": "Send a message to {{name}}",
+    "openPhoto": "Open photo",
+    "attachPhoto": "Attach photo",
+    "inputPlaceholder": "Type a message…",
+    "inputWaiting": "Waiting for connection…"
+  }
+}

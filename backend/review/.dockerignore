@@ -1,0 +1,21 @@
+# Git
+.git
+.gitignore
+
+# Go build artifacts
+*.exe
+*.test
+*.out
+
+# Local env files (use docker env instead)
+.env
+example.env
+
+# IDE
+.idea
+.vscode
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db

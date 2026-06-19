@@ -1,0 +1,14 @@
+{
+  "title": "Saved providers",
+  "subtitle": "Providers you added to favorites from their profile.",
+  "loadError": "Could not load saved providers. Please try again.",
+  "emptyTitle": "No saved providers yet",
+  "emptyDesc": "Open a provider profile and tap the heart to save them here.",
+  "browseServices": "Browse services",
+  "noServicesStrip": "No active services with ratings yet.",
+  "topServices": "Top services by rating",
+  "noReviewsYet": "No reviews yet",
+  "review": "review",
+  "reviews": "reviews",
+  "providerFallback": "Provider #{{id}}"
+}

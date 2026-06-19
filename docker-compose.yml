@@ -1,0 +1,350 @@
+version: "3.9"
+
+services:
+  # PostgreSQL Database
+  masterhub-db:
+    image: postgres:16
+    container_name: masterhub-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: masterhub_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - user_pgdata:/var/lib/postgresql/data
+      - ./docker/postgres-init:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - masterhub-network
+
+  # PgAdmin
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: masterhub-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@masterhub.kz
+      PGADMIN_DEFAULT_PASSWORD: admin123
+    ports:
+      - "5050:80"
+    depends_on:
+      - masterhub-db
+    networks:
+      - masterhub-network
+
+  # User Service (gRPC)
+  user-service:
+    build:
+      context: ./backend/user
+      dockerfile: Dockerfile
+    container_name: masterhub-user-service
+    env_file:
+      - ./backend/user/.env
+    environment:
+      JWT_SECRET: ${JWT_SECRET:-your-very-long-random-secret-32+chars}
+    ports:
+      - "50051:50051"
+    depends_on:
+      masterhub-db:
+        condition: service_healthy
+    networks:
+      - masterhub-network
+    restart: unless-stopped
+
+  # API Gateway (gRPC-Gateway)
+  gateway:
+    build:
+      context: ./backend/gateway
+      dockerfile: Dockerfile
+    container_name: masterhub-gateway
+    environment:
+      USER_SERVICE_URL: user-service:50051
+      GATEWAY_PORT: 8080
+      FRONTEND_BASE_URL: http://localhost:3000
+      TELEGRAM_BOT_USERNAME: ${TELEGRAM_BOT_USERNAME:-mstrhb_bot}
+    ports:
+      - "8080:8080"
+    depends_on:
+      - user-service
+      - category-service
+      - service-service
+      - media-service
+      - chat-service
+      - location-service
+      - notification-service
+      - payment-service
+      - order-service
+      - review-service
+      - job-request-service
+    networks:
+      - masterhub-network
+    restart: unless-stopped
+
+  category-service:
+    build:
+      context: ./backend/category
+      dockerfile: Dockerfile
+    container_name: masterhub-category-service
+    env_file:
+      - ./backend/category/.env
+    ports:
+      - "50052:50052"
+    depends_on:
+      masterhub-db:
+        condition: service_healthy
+    networks:
+      - masterhub-network
+    restart: unless-stopped
+
+  service-service:
+    build:
+      context: ./backend/service
+      dockerfile: Dockerfile
+    container_name: masterhub-service-service
+    env_file:
+      - ./backend/service/.env
+    ports:
+      - "50053:50053"
+    depends_on:
+      masterhub-db:
+        condition: service_healthy
+      user-service:
+        condition: service_started
+      category-service:
+        condition: service_started
+    networks:
+      - masterhub-network
+    restart: unless-stopped
+
+  location-service:
+    build:
+      context: ./backend/location
+      dockerfile: Dockerfile
+    container_name: masterhub-location-service
+    env_file:
+      - ./backend/location/.env
+    ports:
+      - "50054:50054"
+    depends_on:
+      masterhub-db:
+        condition: service_healthy
+    networks:
+      - masterhub-network
+    restart: unless-stopped
+  chat-service:
+    build:
+      context: ./backend/chat
+      dockerfile: Dockerfile
+    container_name: masterhub-chat-service
+    env_file:
+      - ./backend/chat/.env
+    ports:
+      - "50055:50055"
+      - "8081:8081"
+    depends_on:
+      masterhub-db:
+        condition: service_healthy
+    networks:
+      - masterhub-network
+    restart: unless-stopped
+
+  notification-service:
+    build:
+      context: ./backend/notification
+      dockerfile: Dockerfile
+    container_name: masterhub-notification-service
+    env_file:
+      - ./backend/notification/.env
+    ports:
+      - "50056:50056"
+    depends_on:
+      masterhub-db:
+        condition: service_healthy
+    networks:
+      - masterhub-network
+    restart: unless-stopped
+
+  payment-service:
+    build:
+      context: ./backend/payment
+      dockerfile: Dockerfile
+    container_name: masterhub-payment-service
+    env_file:
+      - ./backend/payment/.env
+    ports:
+      - "50058:50058"
+    depends_on:
+      masterhub-db:
+        condition: service_healthy
+    networks:
+      - masterhub-network
+    restart: unless-stopped
+  order-service:
+    build:
+      context: ./backend/order
+      dockerfile: Dockerfile
+    container_name: masterhub-order-service
+    env_file:
+      - ./backend/order/.env
+    ports:
+      - "50057:50057"
+    depends_on:
+      masterhub-db:
+        condition: service_healthy
+      user-service:
+        condition: service_started
+      service-service:
+        condition: service_started
+      location-service:
+        condition: service_started
+      notification-service:
+        condition: service_started
+    networks:
+      - masterhub-network
+    restart: unless-stopped
+  review-service:
+    build:
+      context: ./backend/review
+      dockerfile: Dockerfile
+    container_name: masterhub-review-service
+    env_file:
+      - ./backend/review/.env
+    ports:
+      - "50059:50059"
+    depends_on:
+      masterhub-db:
+        condition: service_healthy
+      user-service:
+        condition: service_started
+      notification-service:
+        condition: service_started
+      order-service:
+        condition: service_started
+    networks:
+      - masterhub-network
+    restart: unless-stopped
+
+  # frontend (browser talks to gateway on host :8080)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: http://localhost:8080/v1
+        NEXT_PUBLIC_STRIPE_PUBLIC_KEY: pk_test_51TabInLaBwp2bpHYFrnIxVLvlVg7bH82yI9JqgY1t5mv2xhsWq0cO7Amr28ITiyUfmwCtE5gIp73m0cG9tHtXkID00XdiHe8qf
+    container_name: masterhub-frontend
+    environment:
+      # Next API route runs inside this container; localhost is not ai-service.
+      AI_SERVICE_URL: http://ai-service:50070
+    ports:
+      - "3000:3000"
+    depends_on:
+      - gateway
+      - ai-service
+    networks:
+      - masterhub-network
+    restart: unless-stopped
+
+  minio:
+    image: minio/minio:latest
+    command: server /data --console-address ":9001"
+    container_name: masterhub-minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    volumes:
+      - minio_data:/data
+    networks:
+      - masterhub-network
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  media-service:
+    build:
+      context: ./backend/media
+      dockerfile: Dockerfile
+    container_name: masterhub-media-service
+    env_file:
+      - ./backend/media/.env
+    ports:
+      - "50060:50060"
+    depends_on:
+      masterhub-db:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+    networks:
+      - masterhub-network
+    restart: unless-stopped
+
+  job-request-service:
+    build:
+      context: ./backend/job-request
+      dockerfile: Dockerfile
+    container_name: masterhub-job-request-service
+    env_file:
+      - ./backend/job-request/.env
+    environment:
+      JWT_SECRET: ${JWT_SECRET:-your-very-long-random-secret-32+chars}
+      USER_SERVICE_URL: user-service:50051
+      NOTIFICATION_SERVICE_URL: notification-service:50056
+      ORDER_SERVICE_URL: order-service:50057
+      DATA_SOURCE_URL: postgres://postgres:postgres@masterhub-db:5432/masterhub_db?sslmode=disable
+    ports:
+      - "50061:50061"
+    depends_on:
+      masterhub-db:
+        condition: service_healthy
+      order-service:
+        condition: service_started
+    networks:
+      - masterhub-network
+    restart: unless-stopped
+
+  telegram-bot:
+    build:
+      context: ./backend/telegram
+      dockerfile: Dockerfile
+    container_name: masterhub-telegram-bot
+    env_file:
+      - ./backend/telegram/.env
+    volumes:
+      - telegram_sessions:/data
+    depends_on:
+      - user-service
+      - notification-service
+      - job-request-service
+    networks:
+      - masterhub-network
+    restart: unless-stopped
+
+  ai-service:
+    build:
+      context: ./backend/ai
+      dockerfile: Dockerfile
+    container_name: masterhub-ai-service
+    env_file:
+      - ./backend/ai/.env
+    ports:
+      - "50070:50070"
+    networks:
+      - masterhub-network
+
+volumes:
+  user_pgdata:
+  minio_data:
+  telegram_sessions:
+
+networks:
+  masterhub-network:
+    driver: bridge

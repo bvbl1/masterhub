@@ -1,0 +1,89 @@
+{
+  "header": {
+    "brand": "Masterhub",
+    "navHome": "Home",
+    "navHowItWorks": "How It Works",
+    "navServices": "Services",
+    "navAbout": "About Us",
+    "register": "Register",
+    "login": "Login",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "hero": {
+    "eyebrow": "MasterHub — your marketplace for trusted professionals",
+    "title": "Find Trusted Construction & Repair Services in Kazakhstan",
+    "body": "MasterHub connects you with verified contractors and specialists across Kazakhstan. Post a request or browse services, compare real ratings and reviews, agree on a fair price, and hire with confidence — all in one place.",
+    "cta": "Browse services",
+    "joinCta": "Join us",
+    "imageAlt": "Construction services in Kazakhstan"
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "subtitle": "Our platform makes it easy to connect clients with trusted construction companies and service providers across Kazakhstan.",
+    "step1Title": "Choose Location",
+    "step1Text": "Select your city or region in Kazakhstan to find construction companies and service providers operating near you. This helps ensure faster response times and local expertise.",
+    "step2Title": "Select Service & Details",
+    "step2Text": "Choose the type of service you need and provide basic project details such as scope, budget, or timeline. This allows providers to understand your request accurately.",
+    "step3Title": "Hire the Right Contractor",
+    "step3Text": "Compare offers, view company profiles, ratings, and reviews, then choose the contractor that best fits your needs. Start your project with confidence and leave feedback after completion."
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Browse popular construction services and find verified companies and professionals ready to complete your project.",
+    "tabs": {
+      "construction": "Construction",
+      "renovation": "Renovation",
+      "installation": "Installation",
+      "repair": "Repair"
+    },
+    "priceFromValue": "From {{price}}",
+    "startingAt": "Starting at",
+    "noReviewsYet": "No reviews yet",
+    "review": "review",
+    "reviews": "reviews",
+    "viewDetails": "View Details",
+    "showMore": "Show more",
+    "empty": "No services in this category yet.",
+    "loadError": "Could not load services. Please try again later."
+  },
+  "about": {
+    "title": "About Us",
+    "intro": "We are a digital platform that connects clients with trusted construction companies and service providers across Kazakhstan. Our goal is to make construction, renovation, and installation services more accessible, transparent, and reliable for everyone.",
+    "imageAlt": "About us",
+    "feature1Title": "Customer Support",
+    "feature1Text": "Our support team is always ready to assist clients and service providers with questions, project issues, and platform guidance.",
+    "feature2Title": "Fair & Transparent Pricing",
+    "feature2Text": "We promote clear pricing and honest offers, allowing users to compare services and choose the best option without hidden costs.",
+    "feature3Title": "Nationwide Coverage",
+    "feature3Text": "Our platform operates across multiple cities and regions of Kazakhstan, helping users find local professionals wherever they are."
+  },
+  "testimonials": {
+    "title": "Trusted by Our Customers",
+    "subtitle": "Our recent reviews from clients",
+    "reviewText": "There will be reviews from clients. There will be reviews from clients. There will be reviews from clients. There will be reviews from clients. There will be reviews from clients.",
+    "sampleName": "Rassul Satpekov",
+    "sampleLocation": "Astana, Kazakhstan",
+    "prev": "Previous",
+    "next": "Next",
+    "reviewedService": "Review for",
+    "unknownService": "Service",
+    "anonymousReviewer": "Customer",
+    "pageOf": "Page {{current}} of {{total}}"
+  },
+  "footer": {
+    "tagline": "Our vision is to simplify construction services and help businesses grow their sales.",
+    "aboutHeading": "About",
+    "aboutUs": "About us",
+    "howItWorks": "How It Works",
+    "services": "Services",
+    "reviews": "Reviews",
+    "socialsHeading": "Socials",
+    "instagram": "Instagram",
+    "twitter": "Twitter",
+    "facebook": "Facebook",
+    "copyright": "©2025 Company Name. All rights reserved",
+    "privacy": "Privacy & Policy",
+    "terms": "Terms & Condition"
+  }
+}

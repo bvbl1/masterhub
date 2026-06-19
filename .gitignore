@@ -1,0 +1,14 @@
+backend/user/.env
+backend/category/.env
+backend/service/.env
+backend/location/.env
+backend/chat/.env
+backend/notification/.env
+backend/order/.env
+backend/review/.env
+backend/payment/.env
+backend/media/.env
+backend/job-request/.env
+backend/gateway/.env.local
+backend/gateway/.env.deploy
+backend/gateway/.env
